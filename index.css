@@ -1,0 +1,27 @@
+*{
+    background-image: url('85-851300_eid-moon-png-moon-of-eid-png-transparent.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main{
+    width: 50%;
+    height: 400px;
+    position: relative;
+    left: 230px;
+
+}
+
+.main h1 {
+    font-size: 13rem;
+    position: absolute;
+    top: -130px;
+}
+
+.main p{
+    font-size: 6rem;
+    position: absolute;
+    top: 120px;
+    
+}

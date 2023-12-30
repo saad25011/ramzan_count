@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="main">
+        <h1 id="date"></h1>
+        <p>days left in Ramzan</p>
+    </div>
+
+
+
+
+    <script>
+        // Function to calculate days remaining until Ramadan
+        function daysUntilRamadan() {
+            // Get the current date
+            const today = new Date();
+
+            // Find the current year
+            const currentYear = today.getFullYear();
+
+            // Set the date for the beginning of Ramadan in the current year
+            // Note: Replace these values with the correct start date of Ramadan for the current year
+            const ramadanStartDate = new Date(currentYear, 3, 1); // Example: April 1st (Note: Months are zero-indexed in JavaScript)
+
+            // Check if Ramadan has already passed in the current year
+            if (today > ramadanStartDate) {
+                // If it has passed, calculate the start date for the next year
+                ramadanStartDate.setFullYear(currentYear + 1);
+            }
+
+            // Calculate the difference in time in milliseconds between today and the start of Ramadan
+            const timeDifference = ramadanStartDate.getTime() - today.getTime();
+
+            // Calculate the number of days remaining until Ramadan
+            const daysRemaining = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+            return daysRemaining;
+        }
+
+        // Get the number of days remaining until Ramadan
+        const daysLeftForRamadan = daysUntilRamadan();
+        document.getElementById('date').innerHTML = daysLeftForRamadan
+
+        console.log(`There are ${daysLeftForRamadan} days left until Ramadan.`);
+
+    </script>
+</body>
+
+</html>
